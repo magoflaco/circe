@@ -17,9 +17,9 @@ This directory contains the Flutter mobile application for the Circe intelligent
    ```
 
 ## Build Release
-To build an APK for Android deployment:
+To build an APK for Android deployment, you should specify the URL of your FastAPI backend using the `--dart-define` flag so the app knows where to connect:
 ```bash
-flutter build apk --release
+flutter build apk --release --dart-define=API_BASE=https://your-backend-url.com
 ```
 
 ## Structure
