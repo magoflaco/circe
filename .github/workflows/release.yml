@@ -1,0 +1,61 @@
+name: Build and Release Circe APK
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    name: Build & Release APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.22.x' # Adjust to the latest stable or the one used
+          channel: 'stable'
+
+      - name: Install Dependencies
+        working-directory: ./frontend
+        run: flutter pub get
+
+      - name: Build APK
+        working-directory: ./frontend
+        run: flutter build apk --release
+
+      - name: Generate Release Notes
+        id: release_notes
+        run: |
+          echo '## Circe v1.0.0 Release' > release_notes.md
+          echo '' >> release_notes.md
+          echo 'This is the initial official release of **Circe: Automation of Vital Signs Monitoring**.' >> release_notes.md
+          echo '' >> release_notes.md
+          echo '### Features Included in this Release:' >> release_notes.md
+          echo '- **Flutter Frontend App**: Complete caregiver dashboard with real-time sync, historical data visualization, and emergency contacts management.' >> release_notes.md
+          echo '- **FastAPI Backend**: Real-time APIs, secure JWT authentication, and AI-powered health analysis using Groq.' >> release_notes.md
+          echo '- **ESP32 Firmware**: Logic for acquiring data from MAX30102 and MLX90614 sensors, and GSM-based SMS alerts via SIM800L module.' >> release_notes.md
+          echo '- **Cross-Platform**: The included APK can be installed on any modern Android device.' >> release_notes.md
+          echo '' >> release_notes.md
+          echo '### Note:' >> release_notes.md
+          echo 'Please consult the `README.md` and `README_ES.md` for instructions on how to set up the backend and flash the firmware to your ESP32 device.' >> release_notes.md
+
+      - name: Create Release and Upload APK
+        uses: softprops/action-gh-release@v1
+        with:
+          files: frontend/build/app/outputs/flutter-apk/app-release.apk
+          body_path: release_notes.md
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,21 @@
+#pragma once
+#define DEFAULT_BACKEND_HOST  "140.86.213.1"   
+#define DEFAULT_BACKEND_PORT  8000              
+#define DEFAULT_USE_HTTPS     false             
+#define I2C_SDA_PIN   8
+#define I2C_SCL_PIN   9
+#define SIM800_TX_PIN  21   
+#define SIM800_RX_PIN  20   
+#define SIM800_BAUD    9600
+#define STATUS_LED_PIN  -1
+#define MEASURE_INTERVAL_MS   300000UL   
+#define CONFIG_SYNC_MS        600000UL   
+#define DEFAULT_SMS_EVERY_MEASUREMENT  true
+#define HR_LOW     50
+#define HR_HIGH    100
+#define SPO2_LOW   95
+#define TEMP_LOW   35.0f
+#define TEMP_HIGH  37.5f
+#define AP_PREFIX     "Circe-"
+#define AP_PASSWORD   "circe1234"    
+#define PORTAL_PORT   80

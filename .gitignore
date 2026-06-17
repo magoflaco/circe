@@ -1,0 +1,41 @@
+# General
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.bak
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.env
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+
+# Flutter / Dart
+.dart_tool/
+.packages
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.jks
+*.keystore
+android/key.properties
+
+# Arduino / C++
+*.elf
+*.bin
+*.hex
+*.lst
+*.map
+*.o
+*.out
+*.exe
+
+backend/.env
+backend/.env.prod
