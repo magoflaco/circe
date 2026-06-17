@@ -1,10 +1,14 @@
 # Circe: Automatización del Monitoreo de Signos Vitales
 
-![Circe Banner](./circe_banner.JPG)
+![Circe Banner](./docs/circe_banner.JPG)
 
 **Circe** es un sistema de monitoreo inteligente enfocado en el cuidado de adultos mayores, que integra tecnologías IoT, sensores biomédicos, un microcontrolador y comunicación inalámbrica para adquirir, procesar y transmitir información fisiológica crítica en tiempo real de forma continua.
 
-Basado en el artículo: *"Automation of Vital Signs Monitoring Through Smart Sensors and GSM Communication for Elderly Care"* (Disponible en este repositorio como `circe_paper.pdf`).
+Basado en el artículo: *"Automation of Vital Signs Monitoring Through Smart Sensors and GSM Communication for Elderly Care"* (Disponible en este repositorio como `./docs/circe_paper.pdf`).
+
+## Demostración en Vivo
+
+🚀 **Puedes probar la aplicación y la interfaz web directamente en:** [https://monitor.itb.lat/](https://monitor.itb.lat/)
 
 ## Características
 
@@ -26,6 +30,10 @@ Por favor, consulte los directorios específicos para más detalles:
 - `frontend/README.md` - Para la configuración de la aplicación móvil.
 - `backend/README.md` - Para la configuración del servidor.
 - `firmware/README.md` - Para las instrucciones de grabación de hardware.
+
+## Agradecimientos
+
+Los autores agradecen al Instituto Superior Universitario Bolivariano de Tecnología (ITB) por el apoyo institucional brindado durante el desarrollo de este trabajo.
 
 ## Licencia
 
